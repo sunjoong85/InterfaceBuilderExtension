@@ -13,10 +13,7 @@ import UIKit
 @IBDesignable extension UIView {
     @IBInspectable var shadowColor:UIColor? {
         set {
-            /*
-             shadow 적용 시 runtime attribute의 color속성은 UIColor이나, 실제로 UIVIew는 cgColor값을 이용함.
-             그렇기 때문에 runtime attribute 적용이 안 됨
-             */
+            //UIColor -> cgColor
             layer.shadowColor = newValue!.cgColor
         }
         get {
@@ -31,7 +28,6 @@ import UIKit
     
     @IBInspectable var shadowOpacity:Float {
         set {
-            //            print(newValue)
             layer.shadowOpacity = newValue
         }
         get {
@@ -41,7 +37,6 @@ import UIKit
     
     @IBInspectable var shadowOffset:CGSize {
         set {
-            //            print(newValue)
             layer.shadowOffset = newValue
         }
         get {
